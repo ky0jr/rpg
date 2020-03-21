@@ -1,0 +1,15 @@
+{
+    "name": "RPG.Game.Player",
+    "references": [
+        "GUID:3c5bd8ac339f4209888684314151c097"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
