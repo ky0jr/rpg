@@ -8,6 +8,7 @@ namespace RPG.Game.Player
     {
         private Rigidbody2D rb;
         private PlayerInput input;
+        private bool attack = false;
         
         [SerializeField]
         private float moveSpeed = 5f;
@@ -18,8 +19,22 @@ namespace RPG.Game.Player
             input = GetComponent<PlayerInput>();
         }
 
+        private void Start()
+        {
+            GetComponent<IAttack>().OnAttackEvent += () => { attack = false; };
+            input.OnFire += () => { attack = true; };
+        }
+
         private void FixedUpdate()
         {
+            Debug.Log(attack);
+            if (attack)
+            {
+                rb.velocity = Vector2.zero;
+                return;
+            }
+                
+            
             Vector2 input = Math.Abs(this.input.Vertical) > 0
                 ? new Vector2(0, this.input.Vertical)
                 : new Vector2(this.input.Horizontal, 0);

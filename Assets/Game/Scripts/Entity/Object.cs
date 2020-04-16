@@ -23,31 +23,10 @@
     {
         int MoveSpeed { get; }
     }
-    
-    public interface IDamageable
-    {
-        event System.Action OnDamageEvent;
-
-        event System.Action OnDeathEvent;
-
-        event System.Action OnInvulnerableEvent;
-
-        bool IsInvulnerable{ get; }
-        
-        void OnDamage();
-
-        void OnDeath();
-    }
 
     public interface IAttack
     {
         event System.Action OnAttackEvent;
-        
-        int Damage { get; }
-        
-        int AttackRange { get; }
-        
-        int AttackSpeed { get; }
 
         void Attack();
     }
