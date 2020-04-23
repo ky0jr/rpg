@@ -1,7 +1,8 @@
 {
     "name": "RPG.Game.Player",
     "references": [
-        "GUID:3c5bd8ac339f4209888684314151c097"
+        "GUID:3c5bd8ac339f4209888684314151c097",
+        "GUID:1868d5bf822c9bb4d999d973762d05ec"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

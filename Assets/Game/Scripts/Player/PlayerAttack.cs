@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using RPG.Game.Entity;
+using RPG.Game.Projectile;
 using UnityEngine;
 
 namespace RPG.Game.Player
@@ -10,7 +11,7 @@ namespace RPG.Game.Player
         #region Prefab
 
         [SerializeField]
-        private GameObject arrowPrefab;
+        private ProjectileBase arrowPrefab;
 
         #endregion
         
@@ -18,6 +19,8 @@ namespace RPG.Game.Player
 
         [SerializeField] 
         private Transform attackPoint;
+
+        private Facing facing = Facing.Front;
         
         private Dictionary<int, Vector3> attackPoints;
 
@@ -46,11 +49,35 @@ namespace RPG.Game.Player
         public void Attack()
         {
             OnAttackEvent?.Invoke();
-            
+            ProjectileBase arrow = Instantiate(arrowPrefab);
+            arrow.Reset();
+            arrow.transform.localEulerAngles = projectileRotation[(int)facing];
+            Vector2 dir;
+            switch (facing)
+            {
+                case Facing.Front:
+                    dir = Vector2.down;
+                    break;
+                case Facing.Back:
+                    dir = Vector2.up;
+                    break;
+                case Facing.Left:
+                    dir = Vector2.left;
+                    break;
+                case Facing.Right:
+                    dir = Vector2.right;
+                    break;
+                default:
+                    dir = Vector2.down;
+                    break;
+            }
+
+            arrow.Launch(dir, attackPoint.position);
         }
 
         private void SetAttackPoint(int facing)
         {
+            this.facing = (Facing)facing;
             attackPoint.localPosition = attackPoints[facing];
         }
     }

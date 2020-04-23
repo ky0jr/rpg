@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG.Game.Projectile
 {
-    public sealed class Arrow : Projectile
+    public sealed class Arrow : ProjectileBase
     {
+        private float speed = 10f;
         public override void Reset()
         {
             rb.velocity = Vector2.zero;
@@ -13,7 +12,8 @@ namespace RPG.Game.Projectile
 
         public override void Launch(Vector2 direction, Vector3 position)
         {
-            
+            rb.velocity = direction * speed;
+            transform.position = position;
         }
     }
 }
