@@ -20,6 +20,9 @@ namespace RPG.Game.Player
         [SerializeField] 
         private Transform attackPoint;
 
+        [SerializeField] 
+        private AudioSource audio;
+
         private Facing facing = Facing.Front;
         
         private Dictionary<int, Vector3> attackPoints;
@@ -73,6 +76,7 @@ namespace RPG.Game.Player
             }
 
             arrow.Launch(dir, attackPoint.position);
+            audio.Play();
         }
 
         private void SetAttackPoint(int facing)

@@ -1,6 +1,7 @@
 ﻿using System;
 using RPG.Game.Entity;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace RPG.Game.Player
 {
@@ -12,7 +13,7 @@ namespace RPG.Game.Player
         
         [SerializeField]
         private float moveSpeed = 5f;
-
+        
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
