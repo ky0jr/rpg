@@ -11,6 +11,11 @@ namespace RPG.Game.Camera
 
         [SerializeField] private Transform target;
 
+        private void Start()
+        {
+            transform.position = target.position + offset;
+        }
+
         void FixedUpdate()
         {
             Vector3 desiredPosition = target.position + offset;

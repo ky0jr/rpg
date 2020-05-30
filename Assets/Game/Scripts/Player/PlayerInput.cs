@@ -1,4 +1,5 @@
 ﻿using RPG.Game.Entity;
+using RPG.Game.Manager;
 using UnityEngine;
 
 namespace RPG.Game.Player
@@ -15,6 +16,7 @@ namespace RPG.Game.Player
         private void Start()
         {
             GetComponent<IDamageable>().OnDeathEvent += () => { CanInput = false; };
+            FindObjectOfType<PauseManager>().OnPause += Pause;
         }
 
         private void Update()
@@ -30,6 +32,11 @@ namespace RPG.Game.Player
             Vertical = Input.GetAxisRaw("Vertical");
             
             Horizontal = Input.GetAxisRaw("Horizontal");
+        }
+
+        private void Pause(bool pause)
+        {
+            CanInput = !pause;
         }
     }
 }

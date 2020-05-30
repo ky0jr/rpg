@@ -27,14 +27,12 @@ namespace RPG.Game.Player
 
         private void FixedUpdate()
         {
-            Debug.Log(attack);
             if (attack)
             {
                 rb.velocity = Vector2.zero;
                 return;
             }
-                
-            
+
             Vector2 input = Math.Abs(this.input.Vertical) > 0
                 ? new Vector2(0, this.input.Vertical)
                 : new Vector2(this.input.Horizontal, 0);
