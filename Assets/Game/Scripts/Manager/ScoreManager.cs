@@ -5,6 +5,8 @@ namespace RPG.Game.Manager
     public class ScoreManager : MonoBehaviour
     {
         private const string SaveKey = "HighScore";
+
+        private int highScore;
         
         public event System.Action<int> OnScoreChanged; 
         public int Score { get; private set; }
@@ -12,13 +14,28 @@ namespace RPG.Game.Manager
         public void AddScore(int value)
         {
             Score += value;
-            PlayerPrefs.SetInt(SaveKey, Score);
+            
+            if (Score > highScore)
+            {
+                PlayerPrefs.SetInt(SaveKey, Score);
+            }
+            
             OnScoreChanged?.Invoke(Score);
         }
 
         public void Reset()
         {
             Score = 0;
+            
+            if (PlayerPrefs.HasKey(SaveKey))
+            {
+                highScore = PlayerPrefs.GetInt(SaveKey);
+            }
+            else
+            {
+                highScore = 0;
+            }
+            
             OnScoreChanged?.Invoke(Score);
         }
     }
