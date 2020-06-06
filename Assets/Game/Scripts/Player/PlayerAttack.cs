@@ -29,7 +29,7 @@ namespace RPG.Game.Player
 
         private Dictionary<int, Vector3> projectileRotation;
 
-        private void Start()
+        public void Initialize()
         {
             attackPoints = new Dictionary<int, Vector3>();
             attackPoints[1] = new Vector3(0, -0.7f);
@@ -75,6 +75,7 @@ namespace RPG.Game.Player
                     break;
             }
 
+            arrow.OnHitEvent += DealDamage;
             arrow.Launch(dir, attackPoint.position);
             audio.Play();
         }
@@ -83,6 +84,11 @@ namespace RPG.Game.Player
         {
             this.facing = (Facing)facing;
             attackPoint.localPosition = attackPoints[facing];
+        }
+
+        private void DealDamage(Transform target)
+        {
+            HitManager.OnDamage(target);
         }
     }
 }

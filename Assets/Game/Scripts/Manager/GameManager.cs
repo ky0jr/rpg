@@ -29,6 +29,7 @@ namespace RPG.Game
         
         [SerializeField] private ScoreManager scoreManager;
         [SerializeField] private UIManager uiManager;
+        [SerializeField] private DropManager dropManager;
 
         public ScoreManager ScoreManager => scoreManager;
 
@@ -36,6 +37,7 @@ namespace RPG.Game
         {
             uiManager.Initialized();
             scoreManager.Reset();
+            dropManager.Initialize();
         }    
     }
 }

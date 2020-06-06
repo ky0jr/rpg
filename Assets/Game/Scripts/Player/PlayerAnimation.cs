@@ -18,7 +18,7 @@ public class PlayerAnimation : MonoBehaviour
     private bool attack = false;
     
     // Start is called before the first frame update
-    void Start()
+    public void Initialize()
     {
         animator = GetComponent<Animator>();
         input = GetComponent<PlayerInput>();

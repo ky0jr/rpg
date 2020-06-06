@@ -330,6 +330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6112caa41a4332f4982cc96f40d0ef1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerAnimation: {fileID: 7774129327573765927}
+  playerAttack: {fileID: 7774129327573765921}
+  playerInput: {fileID: 7774129327573765922}
+  playerMovement: {fileID: 7774129327573765923}
 --- !u!1 &7774129327720058366
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +434,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 4fc82fadd0e1d4ed8a697be473d72842, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

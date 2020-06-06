@@ -20,7 +20,7 @@ namespace RPG.Game.Player
             input = GetComponent<PlayerInput>();
         }
 
-        private void Start()
+        public void Initialize()
         {
             GetComponent<IAttack>().OnAttackEvent += () => { attack = false; };
             input.OnFire += () => { attack = true; };

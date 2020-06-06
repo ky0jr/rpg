@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5295274984248519571}
   - component: {fileID: 6954229257616365059}
   - component: {fileID: 4027450357243054827}
-  - component: {fileID: 2065969775}
+  - component: {fileID: 2659717825704591683}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Gem
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 03b3b03d94fe64ca991436d28accda10, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d1c1523651c71449cb32c2c7933acf8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 4082385391606297316}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6df1215cdb3286744b39a6461e09d0d9, type: 2}
+  m_Controller: {fileID: 9100000, guid: c5693a14033c96944bd5afc64fd0fad3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.35}
+    oldSize: {x: 0.29166666, y: 0.29166666}
     newSize: {x: 0.15625, y: 0.21875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -129,7 +129,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.35}
   m_EdgeRadius: 0
---- !u!114 &2065969775
+--- !u!114 &2659717825704591683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,6 +138,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4082385391606297316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 744c7db7ba8b4ebc8a17097dd0412a7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b392e9830cc41cfa82ab83ba7a91b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

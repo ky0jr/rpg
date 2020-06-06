@@ -13,9 +13,8 @@ namespace RPG.Game.Player
 
         private bool CanInput = true;
 
-        private void Start()
+        public void Initialize()
         {
-            GetComponent<IDamageable>().OnDeathEvent += () => { CanInput = false; };
             FindObjectOfType<PauseManager>().OnPause += Pause;
         }
 

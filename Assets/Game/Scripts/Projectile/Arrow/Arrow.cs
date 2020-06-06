@@ -15,5 +15,18 @@ namespace RPG.Game.Projectile
             rb.velocity = direction * speed;
             transform.position = position;
         }
+
+        protected override void OnTriggerEnter2D(Collider2D col)
+        {
+            
+            if (col.CompareTag("Enemy"))
+            {
+                base.OnTriggerEnter2D(col);
+            }
+            else if (col.CompareTag("Environment"))
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
