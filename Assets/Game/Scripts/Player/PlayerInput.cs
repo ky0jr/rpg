@@ -1,5 +1,4 @@
-﻿using RPG.Game.Entity;
-using RPG.Game.Manager;
+﻿using RPG.Game.Manager;
 using UnityEngine;
 
 namespace RPG.Game.Player
@@ -7,15 +6,18 @@ namespace RPG.Game.Player
     internal class PlayerInput: MonoBehaviour
     {
         public event System.Action OnFire;
-        
-        public float Horizontal { get; private set; }
-        public float Vertical { get; private set; }
+
+        public float Horizontal { get; private set; } = 0;
+        public float Vertical { get; private set; } = 0;
 
         private bool CanInput = true;
 
         public void Initialize()
         {
-            FindObjectOfType<PauseManager>().OnPause += Pause;
+            if (FindObjectOfType<PauseManager>() is PauseManager manager)
+            {
+                manager.OnPause += Pause;   
+            }
         }
 
         private void Update()

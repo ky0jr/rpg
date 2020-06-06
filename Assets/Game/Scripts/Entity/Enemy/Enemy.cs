@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using RPG.Game;
 
 namespace RPG.Game.Entity
 {

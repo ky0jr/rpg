@@ -1,6 +1,4 @@
-﻿using System;
-using RPG.Game.Entity;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG.Game.Player
 {
@@ -15,9 +13,9 @@ namespace RPG.Game.Player
         private void Start()
         {
             playerInput.Initialize();
+            playerAnimation.Initialize();
             playerMovement.Initialize();
             playerAttack.Initialize();
-            playerAnimation.Initialize();
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using RPG.Game.Entity;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace RPG.Game.Player
 {
