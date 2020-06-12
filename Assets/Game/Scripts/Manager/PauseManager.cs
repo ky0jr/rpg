@@ -14,17 +14,22 @@ namespace RPG.Game.Manager
         private Canvas canvas;
         
         private bool isPause;
+
+        private bool canPause;
         
-        private void Awake()
+        public void Initialize()
         {
             isPause = false;
             canvas.enabled = false;
             mainMenuButton.onClick.AddListener(MainMenu);
+            canPause = true;
         }
 
         // Update is called once per frame
         void Update()
         {
+            if(!canPause) return;
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 Pause();
@@ -51,6 +56,12 @@ namespace RPG.Game.Manager
         private void MainMenu()
         {
             SceneManager.LoadScene("Main Menu");
+        }
+
+        public void EndGame()
+        {
+            canPause = false;
+            Pause();
         }
     }
 }

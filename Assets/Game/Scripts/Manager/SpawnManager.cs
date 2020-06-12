@@ -26,6 +26,7 @@ namespace RPG.Game.Manager
             spawnedEnemy = new List<Enemy>();
             enemies = new List<Enemy>(FindObjectsOfType<Enemy>());
             player.gameObject.SetActive(false);
+            player.Initialize();
         }
 
         public void DeadEnemy(Enemy enemy)
@@ -62,11 +63,21 @@ namespace RPG.Game.Manager
 
         public void SpawnPlayer()
         {
-            player.Initialize();
             player.gameObject.SetActive(true);
+
             foreach (var enemy in enemies)
             {
                 enemy.ResetEnemy();
+            }
+        }
+
+        public void DespawnPlayer()
+        {
+            player.gameObject.SetActive(false);
+
+            foreach (var enemy in enemies)
+            {
+                enemy.gameObject.SetActive(false);
             }
         }
     }

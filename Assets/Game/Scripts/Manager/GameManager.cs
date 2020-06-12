@@ -33,13 +33,17 @@ namespace RPG.Game
         [SerializeField] private DropManager dropManager;
         [SerializeField] private SpawnManager spawnManager;
         [SerializeField] private TimeManager timeManager;
+        [SerializeField] private PauseManager pauseManager;
 
         public ScoreManager ScoreManager => scoreManager;
 
         private void Start()
         {
             timeManager.OnGameStart += spawnManager.SpawnPlayer;
-            timeManager.OnGameStart += spawnManager.Initialize;
+            timeManager.OnGameStart += scoreManager.Initialize;
+            timeManager.OnGameEnd += spawnManager.DespawnPlayer;
+            timeManager.OnGameEnd += pauseManager.EndGame;
+            pauseManager.Initialize();
             spawnManager.Initialize();
             dropManager.Initialize(spawnManager.Enemy());
             timeManager.Initialize();
