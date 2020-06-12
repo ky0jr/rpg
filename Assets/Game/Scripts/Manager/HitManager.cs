@@ -6,23 +6,23 @@ namespace RPG.Game
 {
     public static class HitManager
     {
-        private static Dictionary<Transform, IDamageable> Damageables = new Dictionary<Transform, IDamageable>();
+        private static Dictionary<Transform, IDeath> Damageables = new Dictionary<Transform, IDeath>();
 
         public static void OnDamage(Transform target)
         {
-            IDamageable damageable;
+            IDeath death;
 
             if (Damageables.ContainsKey(target))
             {
-                damageable = Damageables[target];
+                death = Damageables[target];
             }
             else
             {
-                damageable = target.GetComponent<IDamageable>();
-                Damageables[target] = damageable;
+                death = target.GetComponent<IDeath>();
+                Damageables[target] = death;
             }
-            
-            damageable.OnDamage(1);
+
+            death.OnDeath();
         }
     }
 }

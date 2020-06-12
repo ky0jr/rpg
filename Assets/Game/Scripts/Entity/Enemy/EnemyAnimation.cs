@@ -6,6 +6,9 @@ namespace RPG.Game.Entity
     [RequireComponent(typeof(Animator))]
     public class EnemyAnimation : MonoBehaviour
     {
+        private const float MinAnimationTime = 2f;
+
+        private const float MaxAnimationTime = 5f;
         enum EnemyLook
         {
             Front = 1,
@@ -13,27 +16,36 @@ namespace RPG.Game.Entity
             Right,
             Back
         }
-        
+
         private static readonly int Death = Animator.StringToHash("death");
-        
+
         private Animator animator;
 
         private float updateTime = 0f;
-        
+
         [SerializeField]
         private EnemyLook lastLook;
 
         private bool isUpdating;
-        
+
+        private bool isInitialized = false;
+
         // Start is called before the first frame update
-        public void Initialize()
+        private void Initialize()
         {
             animator = GetComponent<Animator>();
-            GetComponent<IDamageable>().OnDeathEvent += () =>
+            GetComponent<IDeath>().OnDeathEvent += () =>
             {
                 animator.SetTrigger(Death);
                 isUpdating = false;
             };
+        }
+
+        public void ResetAnimation()
+        {
+            if(!isInitialized)
+                Initialize();
+
             lastLook = EnemyLook.Front;
             UpdateAnimation();
             isUpdating = true;
@@ -43,7 +55,7 @@ namespace RPG.Game.Entity
         {
             if(!isUpdating)
                 return;
-            
+
             if (Time.time >= updateTime)
             {
                 UpdateAnimation();
@@ -60,10 +72,10 @@ namespace RPG.Game.Entity
             }
 
             lastLook = look;
-            
+
             animator.SetTrigger(look.ToString().ToLower());
-            
-            updateTime = Time.time + Random.Range(2.0f, 5.0f);
+
+            updateTime = Time.time + Random.Range(MinAnimationTime, MaxAnimationTime);
         }
     }
 }

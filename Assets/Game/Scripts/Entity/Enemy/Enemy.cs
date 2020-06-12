@@ -4,43 +4,41 @@ using UnityEngine;
 namespace RPG.Game.Entity
 {
     [RequireComponent(typeof(Collider2D))]
-    public class Enemy : MonoBehaviour, IDamageable
+    public class Enemy : MonoBehaviour, IDeath
     {
-        public static event Action<Vector3> OnDrop;
-        
-        public event Action OnDamageEvent;
-
         public event Action OnDeathEvent;
 
         [SerializeField] private EnemyAnimation enemyAnimation;
 
         private Collider2D collider;
+        private SpriteRenderer sprite;
 
         // Start is called before the first frame update
-        void Start()
+        public void Start()
         {
             collider = GetComponent<Collider2D>();
-            collider.isTrigger = true;
-            enemyAnimation.Initialize();
+            sprite = GetComponentInChildren<SpriteRenderer>();
+            sprite.enabled = false;
         }
 
-        public void OnDamage(int damage)
-        {
-            OnDamageEvent?.Invoke();
-            OnDeath();
-        }
-
-        public void OnDeath()
+        void IDeath.OnDeath()
         {
             collider.enabled = false;
             OnDeathEvent?.Invoke();
             GameManager.Current.ScoreManager.AddScore(15);
+            GameManager.Current.Death(this);
         }
 
         public void Destroy()
         {
-            OnDrop?.Invoke(transform.position);
-            Destroy(gameObject);
+            sprite.enabled = false;
+        }
+
+        public void ResetEnemy()
+        {
+            collider.enabled = true;
+            sprite.enabled = true;
+            enemyAnimation.ResetAnimation();
         }
     }
 }

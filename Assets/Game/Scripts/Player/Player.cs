@@ -9,8 +9,8 @@ namespace RPG.Game.Player
         [SerializeField] private PlayerAttack playerAttack;
         [SerializeField] private PlayerInput playerInput;
         [SerializeField] private PlayerMovement playerMovement;
-        
-        private void Start()
+
+        public void Initialize()
         {
             playerInput.Initialize();
             playerAnimation.Initialize();
