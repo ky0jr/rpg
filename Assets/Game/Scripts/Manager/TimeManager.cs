@@ -9,23 +9,24 @@ namespace RPG.Game.Manager
         public event Action OnGameStart;
 
         public event Action OnGameEnd;
-        
-        private const float GameDuration = 5;
+
+        [SerializeField]
+        private float GameDuration = 5;
 
         private float timeEnd = 0f;
 
         private float countDown = 0f;
-        
+
         [SerializeField]
         private Canvas countDownCanvas;
 
         [SerializeField]
         private TMP_Text countDownText;
 
-        [SerializeField] 
+        [SerializeField]
         private Canvas timerCanvas;
-        
-        [SerializeField] 
+
+        [SerializeField]
         private TMP_Text timerText;
 
         private bool gameStart;
@@ -52,7 +53,7 @@ namespace RPG.Game.Manager
             {
                 return;
             }
-            
+
             countDown -= Time.deltaTime;
             countDownText.text = ((int) countDown).ToString();
 
@@ -77,7 +78,7 @@ namespace RPG.Game.Manager
             int time = (int)(timeEnd - Time.time);
 
             timerText.text = time.ToString();
-            
+
             if (Time.time >= timeEnd)
             {
                 OnGameEnd?.Invoke();
