@@ -10,7 +10,7 @@ namespace RPG.Game.Manager
 
         public event Action OnGameEnd;
         
-        private const float GameDuration = 5;
+        private const float GameDuration = 100;
 
         private float timeEnd = 0f;
 
