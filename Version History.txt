@@ -1,0 +1,14 @@
+v1.0.0
+- Playable Game
+- Complete Main Menu
+- Value adjustment
+
+v1.0.1
+- Tile adjustment
+
+v1.0.2
+- Add crossfade transition between scene
+
+v1.0.3
+- Add splash screen
+- Adjust build settings
