@@ -10,9 +10,9 @@ namespace RPG.Game.Manager
         [SerializeField]
         private Player.Player player;
 
-        private const int MinDeathTime = 8;
+        private const int MinDeathTime = 18;
 
-        private const int MaxDeathTime = 13;
+        private const int MaxDeathTime = 30;
 
         private Dictionary<Enemy, float> currentSpawningEnemies;
 

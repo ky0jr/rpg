@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RPG.Transition;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -7,16 +8,19 @@ namespace RPG.Game.Manager
     public class PauseManager : MonoBehaviour
     {
         public event System.Action<bool> OnPause;
-        
+
         [SerializeField]
         private Button mainMenuButton;
-        [SerializeField] 
+        [SerializeField]
         private Canvas canvas;
-        
+
+        [SerializeField]
+        private Crossfade crossfade;
+
         private bool isPause;
 
         private bool canPause;
-        
+
         public void Initialize()
         {
             isPause = false;
@@ -40,9 +44,11 @@ namespace RPG.Game.Manager
         {
             isPause = !isPause;
             canvas.enabled = isPause;
-            
+
+            Cursor.visible = isPause;
+
             OnPause?.Invoke(isPause);
-            
+
             if (isPause)
             {
                 Time.timeScale = 0;
@@ -52,10 +58,10 @@ namespace RPG.Game.Manager
                 Time.timeScale = 1;
             }
         }
-        
+
         private void MainMenu()
         {
-            SceneManager.LoadScene("Main Menu");
+            crossfade.Transition(() => { SceneManager.LoadScene("Main Menu"); });
         }
 
         public void EndGame()

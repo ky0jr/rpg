@@ -11,7 +11,7 @@ namespace RPG.Game.Manager
         public event Action OnGameEnd;
 
         [SerializeField]
-        private float GameDuration = 5;
+        private float GameDuration = 300;
 
         private float timeEnd = 0f;
 
@@ -34,7 +34,7 @@ namespace RPG.Game.Manager
 
         public void Initialize()
         {
-            countDown = 3.5f;
+            countDown = 3.9f;
             gameStart = false;
             gameEnd = false;
             countDownCanvas.enabled = true;

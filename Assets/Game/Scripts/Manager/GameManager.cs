@@ -1,5 +1,4 @@
-﻿using RPG.Game.Camera;
-using RPG.Game.Entity;
+﻿using RPG.Game.Entity;
 using RPG.Game.Manager;
 using UnityEngine;
 
@@ -47,6 +46,7 @@ namespace RPG.Game
             spawnManager.Initialize();
             dropManager.Initialize(spawnManager.Enemy());
             timeManager.Initialize();
+            Cursor.visible = false;
         }
 
         public void Death(Enemy enemy)

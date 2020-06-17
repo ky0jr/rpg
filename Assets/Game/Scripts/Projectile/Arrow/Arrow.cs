@@ -4,7 +4,7 @@ namespace RPG.Game.Projectile
 {
     public sealed class Arrow : ProjectileBase
     {
-        private float speed = 10f;
+        private float speed = 7f;
         public override void Reset()
         {
             rb.velocity = Vector2.zero;
@@ -18,7 +18,7 @@ namespace RPG.Game.Projectile
 
         protected override void OnTriggerEnter2D(Collider2D col)
         {
-            
+
             if (col.CompareTag("Enemy"))
             {
                 base.OnTriggerEnter2D(col);

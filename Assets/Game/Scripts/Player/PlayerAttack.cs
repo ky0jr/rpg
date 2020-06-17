@@ -14,17 +14,17 @@ namespace RPG.Game.Player
         private ProjectileBase arrowPrefab;
 
         #endregion
-        
+
         public event Action OnAttackEvent;
 
-        [SerializeField] 
+        [SerializeField]
         private Transform attackPoint;
 
-        [SerializeField] 
+        [SerializeField]
         private AudioSource audio;
 
         private Facing facing = Facing.Front;
-        
+
         private Dictionary<int, Vector3> attackPoints;
 
         private Dictionary<int, Vector3> projectileRotation;
@@ -32,20 +32,20 @@ namespace RPG.Game.Player
         public void Initialize()
         {
             attackPoints = new Dictionary<int, Vector3>();
-            attackPoints[1] = new Vector3(0, -0.7f);
-            attackPoints[2] = new Vector3(0, 0.6f);
-            attackPoints[3] = new Vector3(-0.6f, -0.2f);
-            attackPoints[4] = new Vector3(0.6f, -0.2f);
-            
+            attackPoints[1] = new Vector3(0, -0.2f);
+            attackPoints[2] = new Vector3(0, 0.15f);
+            attackPoints[3] = new Vector3(-0.3f, -0.2f);
+            attackPoints[4] = new Vector3(0.3f, -0.2f);
+
             attackPoint.localPosition = attackPoints[1];
-            
+
             projectileRotation = new Dictionary<int, Vector3>();
-            
+
             projectileRotation[1] = new Vector3(0, 0, 180);
             projectileRotation[2] = new Vector3(0, 0, 0);
             projectileRotation[3] = new Vector3(0, 0, 90);
             projectileRotation[4] = new Vector3(0, 0, -90);
-            
+
             GetComponent<PlayerAnimation>().OnFacingChange += SetAttackPoint;
         }
 
