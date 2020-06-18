@@ -11,13 +11,18 @@ v1.0.2
 
 v1.0.3
 - Add splash screen
-- Adjust build settings
+- Adjust build setting
 
 v1.0.4
 - Add Music Control
-- Add missin Collider
+- Add New Control for Volume and Mute
 
 v1.0.5
+- Add some missing Collider
+- Add more decoration Tiles
+- Fix Game Timer
+
+v1.0.6
 - Fix Tree Dried Collider
 - Balance Time Limit
 - Add more information on How to Play
