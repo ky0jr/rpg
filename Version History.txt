@@ -12,3 +12,12 @@ v1.0.2
 v1.0.3
 - Add splash screen
 - Adjust build settings
+
+v1.0.4
+- Add Music Control
+- Add missin Collider
+
+v1.0.5
+- Fix Tree Dried Collider
+- Balance Time Limit
+- Add more information on How to Play
