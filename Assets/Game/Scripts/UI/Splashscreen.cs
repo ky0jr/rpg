@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RPG
+namespace RPG.UI
 {
     class Splashscreen
     {
