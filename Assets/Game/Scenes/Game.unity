@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e77b3393eab4d73b5329f067f4fd62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameDuration: 10
+  GameDuration: 360
   countDownCanvas: {fileID: 1777987997}
   countDownText: {fileID: 597764490}
   timerCanvas: {fileID: 621527322}
@@ -3838,56 +3838,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1801311674366488315, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801311674366488315, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801311674981309268, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801311674981309268, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801311675424849909, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801311675424849909, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1999435112368597044, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 1999435112368597044, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 4785954436903625364, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 4785954436903625364, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0.03333336
-      objectReference: {fileID: 0}
     - target: {fileID: 4785954437347626432, guid: d95c1651ddef857449287fa500026fd4,
         type: 3}
       propertyPath: m_Name
@@ -3947,16 +3897,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4785954437718735431, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0.03333336
-      objectReference: {fileID: 0}
-    - target: {fileID: 4785954437718735431, guid: d95c1651ddef857449287fa500026fd4,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0.03333336
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95c1651ddef857449287fa500026fd4, type: 3}
