@@ -812,7 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e77b3393eab4d73b5329f067f4fd62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameDuration: 360
+  GameDuration: 301
   countDownCanvas: {fileID: 1777987997}
   countDownText: {fileID: 597764490}
   timerCanvas: {fileID: 621527322}

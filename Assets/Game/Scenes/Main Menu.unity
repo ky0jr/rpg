@@ -584,12 +584,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Enemy has a chance to drop coin or gem.
+  m_text: 'Kill as much enemy within time range.
+
+    Enemy has a chance to drop
+    coin or gem.
 
     Enemy - 15 Points
 
-    Coin
-    - 10 Points
+    Coin - 10 Points
 
     Gem - 30 Points'
   m_isRightToLeft: 0
@@ -661,12 +663,12 @@ MonoBehaviour:
   m_margin: {x: 25, y: 0, z: 75, w: 0}
   m_textInfo:
     textComponent: {fileID: 1281931700}
-    characterCount: 90
+    characterCount: 128
     spriteCount: 0
-    spaceCount: 20
-    wordCount: 21
+    spaceCount: 27
+    wordCount: 28
     linkCount: 0
-    lineCount: 5
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
